@@ -6,12 +6,16 @@ Treat every public repository as public forever. Do not store credentials, deplo
 
 ## Workflow permissions
 
-- Declare explicit minimum `permissions` in every workflow.
+- Declare explicit minimum permissions in every workflow.
 - Use read-only permissions for checks that only inspect source.
 - Separate test/build workflows from deployment and signing workflows.
 - Do not expose deployment secrets to fork pull requests or untrusted branches.
 - Pin third-party Actions to reviewed immutable commit SHAs.
 - Review changes to workflows and deployment configuration as security-sensitive code.
+
+## Website deployment boundary
+
+The dedicated website repository is `Deku-Foundation/Deku-Foundation.github.io`. Its `.github/workflows/pages.yml` workflow performs pull-request validation without publishing. The deployment job is gated to pushes to `main` and receives the Pages and OIDC permissions only at job level. Keep that separation intact: pull-request code must never run with deployment permissions. Confirm the default-branch deployment itself succeeds before describing a site revision as published.
 
 ## Operational readiness
 
