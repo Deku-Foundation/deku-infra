@@ -1,10 +1,10 @@
 # Deku Linux infrastructure
 
-Public, reviewable infrastructure documentation and future operational configuration for Deku Linux.
+Infrastructure documentation and proposed operational configuration for Deku Linux. No production services are deployed from this repository.
 
 ## Status
 
-**Bootstrap/documentation stage.** No production release service, package repository, signing service, mirror infrastructure, monitoring stack or backup service is configured here. This repository contains security-boundary and deployment guidance; it is not a running infrastructure control plane.
+**Documentation and bootstrap stage.** This repository does not configure a production release service, package repository, signing service, mirror, monitoring stack or backup service. It records deployment boundaries and requirements for services that may be operated later.
 
 The public static website and its GitHub Pages workflow live in [Deku-Foundation.github.io](https://github.com/Deku-Foundation/Deku-Foundation.github.io). The website's deployment job uses GitHub Pages and OIDC permissions only for the deployment job. A pull-request validation pass is not proof that a production deployment completed.
 
